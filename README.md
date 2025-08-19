@@ -6,6 +6,8 @@
 
 > 🚀 A modern, feature-rich Rust CLI application template with best practices baked in.
 
+English | [中文](README_zh-CN.md)
+
 ## ✨ Features
 
 This template provides everything you need to build a professional Rust CLI application:
