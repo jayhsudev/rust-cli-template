@@ -95,10 +95,10 @@ impl GlobalConfig {
             config_builder
         };
 
-        Ok(config_builder
+        config_builder
             .build()
             .into_diagnostic()?
             .try_deserialize()
-            .into_diagnostic()?)
+            .into_diagnostic()
     }
 }
