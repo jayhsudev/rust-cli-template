@@ -22,15 +22,15 @@ async fn main() -> Result<()> {
 
     match cli.command {
         // NOTE: see also https://github.com/Finomnis/tokio-graceful-shutdown/tree/main/examples
-        Commands::Command1 => Toplevel::new(|s: SubsystemHandle| async move {
+        Commands::Command1 => Toplevel::new(|s: &mut SubsystemHandle| async move {
             s.start(SubsystemBuilder::new("command1", command1::run));
         })
         .catch_signals()
         .handle_shutdown_requests(Duration::from_millis(1000))
         .await
         .map_err(Into::into),
-        Commands::Command2 { arg } => Toplevel::new(move |s: SubsystemHandle| async move {
-            s.start(SubsystemBuilder::new("command2", move |subsys| {
+        Commands::Command2 { arg } => Toplevel::new(move |s: &mut SubsystemHandle| async move {
+            s.start(SubsystemBuilder::new("command2", move |subsys: &mut SubsystemHandle| {
                 command2::run(subsys, arg)
             }));
         })

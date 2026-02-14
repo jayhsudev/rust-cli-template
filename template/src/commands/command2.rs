@@ -3,7 +3,7 @@ use tokio::time::{sleep, Duration};
 use tokio_graceful_shutdown::SubsystemHandle;
 use tracing::info;
 
-pub async fn run(subsys: SubsystemHandle, arg: Option<String>) -> Result<()> {
+pub async fn run(subsys: &mut SubsystemHandle, arg: Option<String>) -> Result<()> {
     info!("command2 started.");
     tokio::select! {
         _ = subsys.on_shutdown_requested() => {
