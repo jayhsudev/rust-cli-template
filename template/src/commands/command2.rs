@@ -18,7 +18,7 @@ pub async fn run(subsys: SubsystemHandle, arg: Option<String>) -> Result<()> {
     Ok(())
 }
 
-async fn countdown(arg: &Option<String>) {
+async fn countdown(arg: Option<String>) {
     if let Some(value) = arg {
         println!("arg {}", value);
     } else {
