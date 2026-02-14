@@ -63,7 +63,7 @@ your-cli-app/
 
 ## 🚀 What You Get
 
-- **Modern Rust**: Uses Rust 2021 edition with latest best practices
+- **Modern Rust**: Uses Rust 2024 edition with latest best practices
 - **Shell Completions**: Auto-generated completions for bash, zsh, fish, and PowerShell
 - **Configuration Files**: TOML-based configuration with environment variable support
 - **Structured Commands**: Clean command structure with subcommands support
