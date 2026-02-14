@@ -9,7 +9,7 @@ pub async fn run(subsys: SubsystemHandle, arg: Option<String>) -> Result<()> {
         _ = subsys.on_shutdown_requested() => {
             info!("countdown cancelled.");
         },
-        _ = countdown(&arg) => {
+        _ = countdown(arg) => {
             info!("countdown finished.");
         }
     };
